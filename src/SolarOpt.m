@@ -295,9 +295,22 @@ classdef SolarOpt < matlab.apps.AppBase
 
             % Chart 3: Energy Distribution
             cla(app.DistributionAxes);
-            pie(app.DistributionAxes, ...
-                [r.usefulEnergyWh, r.inverterLossWh, r.derateLossWh], ...
-                {'Useful Load Energy', 'Inverter Losses', 'Derate Losses'});
+            
+            energy_vals = [r.usefulEnergyWh, r.inverterLossWh, r.derateLossWh];
+            total_energy = sum(energy_vals);
+            
+            if total_energy > 0
+                pct = (energy_vals / total_energy) * 100;
+                pie_labels = { ...
+                    sprintf('Useful Load: %.0f Wh (%.1f%%)', r.usefulEnergyWh, pct(1)), ...
+                    sprintf('Inverter Loss: %.0f Wh (%.1f%%)', r.inverterLossWh, pct(2)), ...
+                    sprintf('Derate Loss: %.0f Wh (%.1f%%)', r.derateLossWh, pct(3)) ...
+                };
+            else
+                pie_labels = {'Useful Load', 'Inverter Loss', 'Derate Loss'};
+            end
+
+            pie(app.DistributionAxes, energy_vals, pie_labels);
             title(app.DistributionAxes, 'Daily Energy Distribution Breakdown');
 
             % Chart 4: Sizing Comparison
