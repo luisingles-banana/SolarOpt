@@ -1,0 +1,11 @@
+BatteryID,Manufacturer,Model,Chemistry,VoltageNominal,CapacityAh,MaxDoDPercent,RoundTripEffPercent,CycleLife,PriceUSD
+B001,Trojan,T-105 Flooded,Lead-Acid,12,225,50,80,1200,220
+B002,Renogy,Deep Cycle AGM,Lead-Acid,12,100,50,82,600,180
+B003,Battle Born,LiFePO4 100Ah,LiFePO4,12,100,90,95,3500,950
+B004,Battle Born,LiFePO4 200Ah,LiFePO4,12,200,90,95,3500,1750
+B005,EG4,LifePower4 100Ah,LiFePO4,24,100,90,95,4000,1400
+B006,EG4,LifePower4 280Ah,LiFePO4,24,280,90,95,4000,2900
+B007,Fortress Power,eVault 18.5kWh,LiFePO4,48,386,90,96,6000,7500
+B008,Discover,AES 48-100,LiFePO4,48,100,90,95,3000,1600
+B009,Rolls Battery,S-605,Lead-Acid,48,430,50,80,1500,3200
+B010,Pytes,V5,LiFePO4,48,100,90,95,6000,1250
